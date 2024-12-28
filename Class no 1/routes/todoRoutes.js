@@ -7,7 +7,7 @@ const {
   updateTodo,
   deleteTodo,
   createTodo,
-} = require("../controllers/todocontroller");
+} = require("../controllers/todoController");
 const authVerify = require("../middlewares/auth");
 
 
