@@ -1,2 +1,2 @@
 ## Node Deploy Url .....
-[respectful-reflection-deploy.up.railway.app]
+[respectful-reflection-deploy.up.railway.app](respectful-reflection-deploy.up.railway.app)
