@@ -7,7 +7,7 @@ const {
   updateTodo,
   deleteTodo,
   createTodo,
-} = require("../controllers/todoController");
+} = require("../controllers/todocontroller");
 const authVerify = require("../middlewares/auth");
 
 
@@ -16,7 +16,7 @@ todoRouter.post("/create",authVerify, createTodo);
 
 //todos
 //get todos
-todoRouter.get("/", authVerify, fetchTodos);
+todoRouter.get("/", fetchTodos);
 
 //get todo by id
 todoRouter.get("/:id", authVerify, getTodosById);

@@ -25,7 +25,6 @@ const authVerify = async (req, res, next) => {
         message: "Error in authVerify",
         error: error.message,
       });
-  
     }
   }
   

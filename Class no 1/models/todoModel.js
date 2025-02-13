@@ -14,11 +14,11 @@ const todoSchema = new mongoose.Schema({
       type: Boolean,
       default: false, // Default to false if not provided
     },
-    id: {
-      type: Number,
-      unique: false,
-      required: true,
-    },
+    // id: {
+    //   type: Number,
+    //   unique: false,
+    //   required: true,
+    // },
     createdAt: {
       type: Date,
       default: Date.now,

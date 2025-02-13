@@ -1,0 +1,44 @@
+/* Centering the loader */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+    width: 93vw;
+    background-color: none;
+  }
+  
+  /* Animated pulsing ring */
+  .loading-ring {
+    width: 80px;
+    height: 80px;
+    border: 8px solid aqua;
+    opacity: 0.8;
+    border-top-color: yellow;
+    opacity: 0.8;
+    border-radius: 50%;
+    animation: spin 1.2s linear infinite;
+  }
+  
+  /* Bouncing dots animation */
+  .loading-dots {
+    display: flex;
+    margin-top: 12px;
+  }
+  
+  .loading-dots span {
+    width: 12px;
+    height: 12px;
+    margin: 0 4px;
+    background-color: aqua;
+    border-radius: 50%;
+  }
+  
+  /* Keyframe animations */
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  

@@ -1,0 +1,35 @@
+.delete-button {
+  background: linear-gradient(45deg, red, orange, yellow, green, blue, purple);
+  background-size: 300%;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  border-radius: 5px;
+  animation: colorShift 5s infinite linear;
+}
+
+.delete-button:hover {
+  background-position: right center;
+  transform: scale(1.1);
+}
+
+.delete-button:disabled {
+  background: grey;
+  cursor: not-allowed;
+}
+
+@keyframes colorShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}

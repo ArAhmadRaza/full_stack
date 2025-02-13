@@ -57,28 +57,30 @@ const createProduct = async (req, res) => {
 };
 
 const deleteProduct = async (req, res) => {
-  //delete a product
   try {
-    const product = await Product.findById(req.params.id);
-    console.log("Product Deleted Successfuly", product);
-    if (!product) {
-      return res.status(404).json({
-        message: "Product not found",
-      });
+    const { id } = req.params;
+    console.log("Received ID for deletion:", id); // Debugging log
+
+    if (!id || id === "undefined") {
+      return res.status(400).json({ message: "Invalid Product ID." });
     }
-    await product.remove();
-    res.status(200).json({
-      product: product,
-      message: "Product deleted successfully",
-    });
+
+    const product = await Product.findById(id);
+
+    if (!product) {
+      return res.status(404).json({ message: "Product not found." });
+    }
+
+    await Product.findByIdAndDelete(id);
+
+    res.status(200).json({ message: "Product deleted successfully", product });
   } catch (error) {
-    res.status(500).json({
-      product: [],
-      message: "Server Error in deleting product",
-      error: error,
-    });
+    console.error("Error deleting product:", error);
+    res.status(500).json({ message: "Server error in deleting product", error: error.message });
   }
 };
+
+
 
 const updateProduct = async (req, res) => {
   try {

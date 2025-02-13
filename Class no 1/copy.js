@@ -55,7 +55,7 @@ const authVerify = async (req, res, next) => {
 const connectMongoDB = async () => {
   try {
     console.log("Connecting to MongoDB...");
-    await mongoose.connect(mongoUri); // Removed deprecated options
+    await mongoose.connect(process.env.MONGO_URI); // Removed deprecated options
     console.log("MongoDB Connected");
     console.log(
       "---------------------------------__--___--____--___---____---____---___"

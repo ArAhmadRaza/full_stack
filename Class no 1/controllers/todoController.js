@@ -44,17 +44,17 @@ const getTodosById = async (req, res) => {
 const createTodo = async (req, res) => {
   try {
     const newTodo = new Todos({
+      id: req.body.id,
       title: req?.body?.title,
       description: req?.body?.description,
       completed: req?.body?.completed,
-      id: req?.body?.id,
-      createdAt: new Date(),
     });
     console.log("newTodo: ====---------------------->>>>> ", newTodo);
     // await mongoose.set("debug", true);
     // await connectMongoDB();
     const savedTodo = await newTodo.save();
     console.log("savedTodo: ====---------------------->>>>> ", savedTodo);
+    
 
     res.status(201).json({
       data: savedTodo,
